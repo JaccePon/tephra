@@ -1,0 +1,12 @@
+@startuml
+
+class Business
+interface Adapter
+class AdapterImpl
+class Component
+
+Business -r-> Adapter
+AdapterImpl .u.|>Adapter
+AdapterImpl -r-> Component
+
+@enduml

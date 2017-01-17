@@ -1,0 +1,10 @@
+@startuml
+actor User
+User -> "Ctrl-Http"
+"Ctrl-Http" -> Ctrl
+Ctrl -> Service
+Service -> Service
+Ctrl <-- Service
+"Ctrl-Http" <-- Ctrl
+User <-- "Ctrl-Http"
+@enduml

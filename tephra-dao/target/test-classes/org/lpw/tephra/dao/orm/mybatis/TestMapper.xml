@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lpw.tephra.dao.orm.mybatis.TestMapper">
+    <select id="findByIdFromXml" resultType="org.lpw.tephra.dao.orm.mybatis.TestModel">
+        select * from t_tephra_mybatis where id=#{id}
+    </select>
+    <insert id="insertFromXml" parameterType="org.lpw.tephra.dao.orm.mybatis.TestModel">
+        insert into t_tephra_mybatis values(#{id},#{sort},#{name},#{datecol},#{timecol})
+    </insert>
+    <update id="updateFromXml" parameterType="org.lpw.tephra.dao.orm.mybatis.TestModel">
+        update t_tephra_mybatis set name=#{name},datecol=#{datecol},timecol=#{timecol} where id=#{id}
+    </update>
+    <delete id="deleteFromXml">
+        delete from t_tephra_mybatis where id=#{id}
+    </delete>
+    <select id="selectAllFromXml" resultType="org.lpw.tephra.dao.orm.mybatis.TestModel">
+        select * from t_tephra_mybatis order by sort
+    </select>
+</mapper>

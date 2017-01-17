@@ -1,0 +1,61 @@
+@startuml
+
+actor 用户
+用户 --> 前端UI
+前端UI --> 分发器
+分发器 --> 文件群
+分发器 --> 服务群API
+服务群API -l-> Hadoop群
+服务群API -r-> 数据中心
+
+package 前端UI {
+node Android
+node iOS
+node Windows10
+node H5
+node Node.js
+
+H5 --> Node.js
+}
+
+package 分发器 {
+node 分发器1
+node 分发器2
+
+分发器1 <--> 分发器2
+}
+
+package 服务群API {
+node 服务节点1
+node 服务节点n
+
+服务节点1 <--> 服务节点n
+}
+
+package 文件群 {
+node 文件节点n
+node 文件节点1
+}
+
+package 数据中心 {
+database 主库
+database 从库1
+database 从库n
+
+主库 <-- 从库1
+主库 <-- 从库n
+}
+
+package Hadoop群 {
+node NameNode2
+node NameNode1
+node DataNode1
+node DataNoden
+
+NameNode1 --> DataNode1
+NameNode1 --> DataNoden
+NameNode2 --> DataNode1
+NameNode2 --> DataNoden
+}
+
+@enduml

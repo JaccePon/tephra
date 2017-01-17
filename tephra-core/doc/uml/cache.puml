@@ -1,0 +1,26 @@
+@startuml
+
+interface Cache
+interface Handler
+class CacheImpl
+
+Cache <|.. CacheImpl
+CacheImpl -l-* "+" Handler
+
+package lr{
+interface Local
+interface Remote
+class lr.HandlerImpl
+
+Handler <|.. lr.HandlerImpl
+lr.HandlerImpl -l-* Local
+lr.HandlerImpl --* Remote
+}
+
+package redis{
+class redis.HandlerImpl
+
+Handler <|.. redis.HandlerImpl
+}
+
+@enduml

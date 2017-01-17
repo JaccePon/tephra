@@ -1,0 +1,34 @@
+@startuml
+
+node 分发器
+分发器 --> 文件群
+分发器 --> 服务群
+服务群 --> 数据中心
+服务群 --> Hadoop群
+
+package 文件群 {
+node 文件节点1
+node 文件节点2
+}
+
+package 服务群 {
+node 服务节点1
+node 服务节点2
+node 服务节点3
+}
+
+package 数据中心 {
+node 主库
+node 从库1
+node 从库2
+}
+
+package Hadoop群 {
+node NameNode1
+node NameNode2
+node DataNode1
+node DataNode2
+node DataNode3
+}
+
+@enduml

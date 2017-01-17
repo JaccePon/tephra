@@ -1,0 +1,16 @@
+@startuml
+
+interface Jdbc
+interface DataSource
+interface Connection
+interface Sql
+interface Procedure
+interface SqlTable
+
+DataSource <.. Connection
+Connection <.. Jdbc
+Jdbc <|-- Sql
+Jdbc <|-- Procedure
+SqlTable <.. Jdbc
+
+@enduml

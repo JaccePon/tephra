@@ -1,0 +1,36 @@
+@startuml
+
+interface Orm
+interface Query
+interface PageList
+
+Query <.. Orm
+PageList <.. Orm
+
+package lite{
+interface LiteOrm
+
+Orm <|-- LiteOrm
+}
+
+package hibernate{
+interface hibernate.HibernateOrm
+interface hibernate.SessionFactory
+interface hibernate.Session
+
+hibernate.SessionFactory <.. hibernate.Session
+hibernate.Session <.. hibernate.HibernateOrm
+Orm <|-- hibernate.HibernateOrm
+}
+
+package mybatis{
+interface mybatis.MybatisOrm
+interface mybatis.SessionFactory
+interface mybatis.Session
+
+mybatis.SessionFactory <.. mybatis.Session
+mybatis.Session <.. mybatis.MybatisOrm
+Orm <|-- mybatis.MybatisOrm
+}
+
+@enduml

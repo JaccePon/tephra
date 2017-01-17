@@ -1,0 +1,15 @@
+@startuml
+
+package 主机1 {
+node 分发器
+node 服务节点1
+node 主数据节点
+}
+
+package 主机2 {
+node 文件节点
+node 服务节点2
+node 从数据节点
+}
+
+@enduml

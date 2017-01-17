@@ -1,0 +1,14 @@
+@startuml
+
+interface Engine
+interface Arguments
+interface ScriptValidator
+interface ScriptService
+class JsCtrl
+
+Arguments <.l. Engine
+Engine <.. ScriptService
+Engine <.l. JsCtrl
+ScriptService <.l. ScriptValidator
+
+@enduml

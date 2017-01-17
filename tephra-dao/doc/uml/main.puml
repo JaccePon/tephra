@@ -1,0 +1,43 @@
+@startuml
+
+enum Mode
+interface Commitable
+interface ConnectionFactory
+interface Connection
+
+Mode <.. Connection
+Commitable <|-- Connection
+
+package dialect{
+}
+
+package jdbc{
+}
+
+ConnectionFactory <.. jdbc
+Connection <.. jdbc
+
+package model{
+}
+
+package orm{
+    package lite{
+    }
+
+    package hibernate{
+    }
+
+    package mybatis{
+    }
+}
+
+ConnectionFactory <.. orm
+Connection <.. orm
+jdbc <.. orm
+dialect <.. orm
+model <.. orm
+
+package mongo{
+}
+
+@enduml

@@ -1,0 +1,46 @@
+@startuml
+
+interface Dispatcher
+interface Coder
+interface Interceptor
+interface Permit
+interface Invocation
+interface Forward
+enum Failure
+
+package context{
+interface Header
+interface Request
+interface Response
+interface Session
+}
+
+package validate{
+annotation Validate
+annotation Validates
+interface ValidateWrapper
+interface Validator
+interface Validators
+}
+
+package execute{
+annotation Execute
+interface Executor
+interface ExecuteMap
+}
+
+package template{
+interface Template
+interface Templates
+interface TemplateHelper
+
+package json{}
+package freemarker{}
+package stream{}
+}
+
+package console{
+interface Console
+}
+
+@enduml
